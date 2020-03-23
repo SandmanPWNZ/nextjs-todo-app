@@ -1,0 +1,60 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "multi private-next-pages/apollo.js": 0,
+      "multi private-next-pages/App/index.js": 1,
+      "multi private-next-pages/components/Note.js": 2,
+      "multi private-next-pages/components/TodoForm.js": 3,
+      "multi private-next-pages/index.js": 4,
+      "multi private-next-pages/styled/global.style.js": 5,
+      "multi next/dist/pages/_app": 6,
+      "multi next/dist/pages/_error": 7,
+      "multi next/dist/pages/_document": 8
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/App.js": 0,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/_app.js": 1,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/_document.js": 2,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/_error.js": 3,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/apollo.js": 4,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/components/Note.js": 5,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/components/TodoForm.js": 6,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/index.js": 7,
+      "static/UvSDjPfC2A5HECdvmNFXk/pages/styled/global.style.js": 8,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/App.js": 9,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/_app.js": 10,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/_document.js": 11,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/_error.js": 12,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/apollo.js": 13,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/components/Note.js": 14,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/components/TodoForm.js": 15,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/index.js": 16,
+      "static/LRiun6FlBEjOlBDaudQk2/pages/styled/global.style.js": 17
+    },
+    "bySource": {},
+    "usedIds": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      9
+    ]
+  }
+}

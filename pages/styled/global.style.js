@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components'
 
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,600&subset=latin-ext');
@@ -31,6 +31,7 @@ injectGlobal`
     border-bottom: 1px solid #474747;
   }
   .note {
+    display: flex;
     color: #727070;
     padding: 40px;
     margin: 20px;
@@ -40,13 +41,40 @@ injectGlobal`
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
-    -webkit-transition:background-color .2s ease-out;
-    -o-transition:background-color .2s ease-out;
-    transition:background-color .2s ease-out
+    -webkit-transition:background-color .4s ease-out;
+    -o-transition:background-color .4s ease-out;
+    transition:background-color .4s ease-out
   }
   .note:hover {
     transform: scale(1.02);
-    background-color: #dbb5c7;
+    background-color: #93c3a7;
+  }
+  .note.completed {
+    background-color: #abffcd;
+  }
+  .note input{
+    flex-grow: 1;
+    padding: 5px 7px;
+    border: 0;
+    background-color: transparent;
+  }
+  .note input.editable{
+    border: 1px solid #abffcd;
+    font-size: 20px;
+  }
+  .note button{
+    border: none;
+    color: white;
+    padding: 15px 32px;
+  }
+  .note button.edit{
+    background-color: #008CBA;
+  }
+  .note button.delete{
+    background-color: #f44336;
+  }
+  .note button.done{
+    background-color: #4CAF50;
   }
   .button {
     position: fixed;
@@ -85,5 +113,18 @@ injectGlobal`
     color: #f1f1f1;
     border-top: 1px solid #474747;
   }
-
-`;
+  .message {    
+    color: red;
+    padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 999;
+    background-color: #ffe2e2;
+    border-radius: 5px;
+    border: 1px solid red;
+    transition: 1s bottom;
+  }
+  .message.error{
+    bottom: 60px;
+  }
+`
