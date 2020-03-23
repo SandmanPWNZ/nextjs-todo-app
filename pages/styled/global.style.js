@@ -37,7 +37,6 @@ injectGlobal`
     margin: 20px;
     background: #fff;
     border: solid 1px #e9e9e9;
-    cursor: pointer;
     box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
     -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);
@@ -66,6 +65,7 @@ injectGlobal`
     border: none;
     color: white;
     padding: 15px 32px;
+    cursor: pointer;
   }
   .note button.edit{
     background-color: #008CBA;

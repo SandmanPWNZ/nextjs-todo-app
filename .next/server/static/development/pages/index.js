@@ -360,13 +360,12 @@ var App = function App() {
 /*!*************************!*\
   !*** ./pages/apollo.js ***!
   \*************************/
-/*! exports provided: graphqlURI, client */
+/*! exports provided: graphqlURI, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "graphqlURI", function() { return graphqlURI; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "client", function() { return client; });
 /* harmony import */ var apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! apollo-client */ "apollo-client");
 /* harmony import */ var apollo_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(apollo_client__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! apollo-cache-inmemory */ "apollo-cache-inmemory");
@@ -388,45 +387,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var graphqlURI = 'https://eu1.prisma.sh/roman-42dfa5/demo/dev'; // export default withApollo(
-//   ({ initialState }) =>
-//     new ApolloClient({
-//       link: ApolloLink.from([
-//         onError(({ graphQLErrors, networkError }) => {
-//           if (graphQLErrors)
-//             graphQLErrors.forEach(({ message, locations, path }) =>
-//               console.log(`[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`)
-//             )
-//           if (networkError) console.log(`[Network error]: ${networkError}`)
-//         }),
-//         new HttpLink({
-//           uri: graphqlURI,
-//           credentials: 'same-origin',
-//           fetch
-//         })
-//       ]),
-//       cache: new InMemoryCache().restore(initialState || {})
-//     })
-// )
-
-var client = new apollo_client__WEBPACK_IMPORTED_MODULE_0__["ApolloClient"]({
-  link: apollo_link__WEBPACK_IMPORTED_MODULE_4__["ApolloLink"].from([Object(apollo_link_error__WEBPACK_IMPORTED_MODULE_3__["onError"])(function (_ref) {
-    var graphQLErrors = _ref.graphQLErrors,
-        networkError = _ref.networkError;
-    if (graphQLErrors) graphQLErrors.forEach(function (_ref2) {
-      var message = _ref2.message,
-          locations = _ref2.locations,
-          path = _ref2.path;
-      return console.log("[GraphQL error]: Message: ".concat(message, ", Location: ").concat(locations, ", Path: ").concat(path));
-    });
-    if (networkError) console.log("[Network error]: ".concat(networkError));
-  }), new apollo_link_http__WEBPACK_IMPORTED_MODULE_2__["HttpLink"]({
-    uri: graphqlURI,
-    credentials: 'same-origin',
-    fetch: node_fetch__WEBPACK_IMPORTED_MODULE_5___default.a
-  })]),
-  cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__["InMemoryCache"]()
-});
+var graphqlURI = 'https://eu1.prisma.sh/roman-42dfa5/demo/dev';
+/* harmony default export */ __webpack_exports__["default"] = (next_with_apollo__WEBPACK_IMPORTED_MODULE_6___default()(function (_ref) {
+  var initialState = _ref.initialState;
+  return new apollo_client__WEBPACK_IMPORTED_MODULE_0__["ApolloClient"]({
+    link: apollo_link__WEBPACK_IMPORTED_MODULE_4__["ApolloLink"].from([Object(apollo_link_error__WEBPACK_IMPORTED_MODULE_3__["onError"])(function (_ref2) {
+      var graphQLErrors = _ref2.graphQLErrors,
+          networkError = _ref2.networkError;
+      if (graphQLErrors) graphQLErrors.forEach(function (_ref3) {
+        var message = _ref3.message,
+            locations = _ref3.locations,
+            path = _ref3.path;
+        return console.log("[GraphQL error]: Message: ".concat(message, ", Location: ").concat(locations, ", Path: ").concat(path));
+      });
+      if (networkError) console.log("[Network error]: ".concat(networkError));
+    }), new apollo_link_http__WEBPACK_IMPORTED_MODULE_2__["HttpLink"]({
+      uri: graphqlURI,
+      fetch: node_fetch__WEBPACK_IMPORTED_MODULE_5___default.a
+    })]),
+    cache: new apollo_cache_inmemory__WEBPACK_IMPORTED_MODULE_1__["InMemoryCache"]().restore(initialState || {})
+  });
+}));
 
 /***/ }),
 
@@ -742,37 +723,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App */ "./pages/App/index.js");
-/* harmony import */ var _apollo_react_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @apollo/react-hooks */ "@apollo/react-hooks");
-/* harmony import */ var _apollo_react_hooks__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_apollo_react_hooks__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-apollo */ "react-apollo");
+/* harmony import */ var react_apollo__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_apollo__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _apollo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./apollo */ "./pages/apollo.js");
 /* harmony import */ var _styled_global_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./styled/global.style */ "./pages/styled/global.style.js");
 var _jsxFileName = "/home/sandmanpwnz/Projects/nextjs-todo-app/pages/index.js";
 
-// import App from './App/Home'
- // import { ApolloProvider } from 'react-apollo'
 
 
 
 
 
-var Index = function Index() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_apollo_react_hooks__WEBPACK_IMPORTED_MODULE_2__["ApolloProvider"], {
-    client: _apollo__WEBPACK_IMPORTED_MODULE_3__["client"],
+var Index = function Index(_ref) {
+  var url = _ref.url,
+      apollo = _ref.apollo;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_2__["ApolloProvider"], {
+    client: apollo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 10
     },
     __self: this
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Object(_apollo__WEBPACK_IMPORTED_MODULE_3__["default"])(Index));
 
 /***/ }),
 
@@ -791,7 +772,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,600&subset=latin-ext');\n\n  * {\n    margin: 0px;\n    box-sizing: border-box;\n  }\n\n  body {\n    margin: 0;\n    padding: 0;\n    background: hsl(0, 1%, 81%);\n    font-family: 'Raleway', sans-serif;\n  }\n\n  .container {\n    padding-bottom: 80px;\n  }\n  \n  .header {\n    font-size: 22px;\n    font-weight: bold;\n    font-style: italic;\n    text-align: center;\n    text-transform: uppercase;\n    color: #f1f1f1;\n    background: #595a5c;\n    padding: 40px;\n    border-bottom: 1px solid #474747;\n  }\n  .note {\n    display: flex;\n    color: #727070;\n    padding: 40px;\n    margin: 20px;\n    background: #fff;\n    border: solid 1px #e9e9e9;\n    cursor: pointer;\n    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -webkit-transition:background-color .4s ease-out;\n    -o-transition:background-color .4s ease-out;\n    transition:background-color .4s ease-out\n  }\n  .note:hover {\n    transform: scale(1.02);\n    background-color: #93c3a7;\n  }\n  .note.completed {\n    background-color: #abffcd;\n  }\n  .note input{\n    flex-grow: 1;\n    padding: 5px 7px;\n    border: 0;\n    background-color: transparent;\n  }\n  .note input.editable{\n    border: 1px solid #abffcd;\n    font-size: 20px;\n  }\n  .note button{\n    border: none;\n    color: white;\n    padding: 15px 32px;\n  }\n  .note button.edit{\n    background-color: #008CBA;\n  }\n  .note button.delete{\n    background-color: #f44336;\n  }\n  .note button.done{\n    background-color: #4CAF50;\n  }\n  .button {\n    position: fixed;\n    z-index: 1;\n    right: 40px;\n    bottom: 40px;\n    width: 50px;\n    height: 50px;\n    border-radius: 20%;\n    text-align: center;\n    line-height: 50px;\n    font-size: 28px;\n    font-weight: bold;\n    color: #f1f1f1;\n    background: #595a5c;\n    cursor: pointer;\n    box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    -webkit-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    -moz-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    transition: transform .06s ease;\n  }\n  .button:hover {\n    transform: scale(1.05);\n  }\n  .input {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    height: 80px;\n    line-height: 80px;\n    padding: 0 20px;\n    border: none;\n    outline: none;\n    background: #595a5c;\n    font-size: 16px;\n    color: #f1f1f1;\n    border-top: 1px solid #474747;\n  }\n  .message {    \n    color: red;\n    padding: 10px;\n    position: fixed;\n    bottom: 0px;\n    z-index: 999;\n    background-color: #ffe2e2;\n    border-radius: 5px;\n    border: 1px solid red;\n    transition: 1s bottom;\n  }\n  .message.error{\n    bottom: 60px;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  @import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,600&subset=latin-ext');\n\n  * {\n    margin: 0px;\n    box-sizing: border-box;\n  }\n\n  body {\n    margin: 0;\n    padding: 0;\n    background: hsl(0, 1%, 81%);\n    font-family: 'Raleway', sans-serif;\n  }\n\n  .container {\n    padding-bottom: 80px;\n  }\n  \n  .header {\n    font-size: 22px;\n    font-weight: bold;\n    font-style: italic;\n    text-align: center;\n    text-transform: uppercase;\n    color: #f1f1f1;\n    background: #595a5c;\n    padding: 40px;\n    border-bottom: 1px solid #474747;\n  }\n  .note {\n    display: flex;\n    color: #727070;\n    padding: 40px;\n    margin: 20px;\n    background: #fff;\n    border: solid 1px #e9e9e9;\n    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.1);\n    -webkit-transition:background-color .4s ease-out;\n    -o-transition:background-color .4s ease-out;\n    transition:background-color .4s ease-out\n  }\n  .note:hover {\n    transform: scale(1.02);\n    background-color: #93c3a7;\n  }\n  .note.completed {\n    background-color: #abffcd;\n  }\n  .note input{\n    flex-grow: 1;\n    padding: 5px 7px;\n    border: 0;\n    background-color: transparent;\n  }\n  .note input.editable{\n    border: 1px solid #abffcd;\n    font-size: 20px;\n  }\n  .note button{\n    border: none;\n    color: white;\n    padding: 15px 32px;\n    cursor: pointer;\n  }\n  .note button.edit{\n    background-color: #008CBA;\n  }\n  .note button.delete{\n    background-color: #f44336;\n  }\n  .note button.done{\n    background-color: #4CAF50;\n  }\n  .button {\n    position: fixed;\n    z-index: 1;\n    right: 40px;\n    bottom: 40px;\n    width: 50px;\n    height: 50px;\n    border-radius: 20%;\n    text-align: center;\n    line-height: 50px;\n    font-size: 28px;\n    font-weight: bold;\n    color: #f1f1f1;\n    background: #595a5c;\n    cursor: pointer;\n    box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    -webkit-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    -moz-box-shadow: 5px 5px 6px 0px rgba(0,0,0,0.8);\n    transition: transform .06s ease;\n  }\n  .button:hover {\n    transform: scale(1.05);\n  }\n  .input {\n    position: fixed;\n    bottom: 0;\n    width: 100%;\n    height: 80px;\n    line-height: 80px;\n    padding: 0 20px;\n    border: none;\n    outline: none;\n    background: #595a5c;\n    font-size: 16px;\n    color: #f1f1f1;\n    border-top: 1px solid #474747;\n  }\n  .message {    \n    color: red;\n    padding: 10px;\n    position: fixed;\n    bottom: 0px;\n    z-index: 999;\n    background-color: #ffe2e2;\n    border-radius: 5px;\n    border: 1px solid red;\n    transition: 1s bottom;\n  }\n  .message.error{\n    bottom: 60px;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1070,6 +1051,17 @@ module.exports = require("node-fetch");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-apollo":
+/*!*******************************!*\
+  !*** external "react-apollo" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-apollo");
 
 /***/ }),
 
